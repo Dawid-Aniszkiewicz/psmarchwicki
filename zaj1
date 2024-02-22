@@ -79,11 +79,27 @@ int x,y;
     ob=(x+y+z)/2;
     printf("wynik=%f",sqrt(ob*(ob-x)*(ob-y)*(ob-z)));
 */
-float a,b,c,d,e,f;
+float a,b,c,d,e,f,w1,w2,w;
 printf("podaj a,b,c,d,e,f");
 scanf("%f%f%f%f%f%f",&a,&b,&c,&d,&e,&f);
 printf("uklad= \n%fx+%fy=%f\n%fx+%fy=%f",a,b,c,d,e,f);
+w=a*e-b*d;
+w1=c*e-b*f;
+w2=a*f-c*d;
+if(w==0){
+    if(w1==0&&w2==0){
+        printf("uklad nieoznaczony");
+    }
+    else{
+        printf("uklad sprzeczny");
 
+    }
+
+}
+else{
+    printf("x=%f,y=f%",w1/w,w2/w);
+
+}
  }
 
 
