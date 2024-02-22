@@ -1,0 +1,90 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main()
+{
+    /*
+    printf("Hello world!\n");
+    printf("Bardzo\nDlugi\nNapis \n");
+    printf("/,\\,\\\\,$,&,%%");
+    int a
+
+    int a;
+    scanf("%d",&a);
+    printf("%d",a);
+    float b;
+    scanf("%f",&b);
+    printf("%.2f",b);
+
+    int a,b,c;
+    scanf("%d%d%d",&a,&b,&c);
+    printf("a=%d\nb=%d\nc=%d",a,b,c);
+
+    int a1,b1,c1;
+    scanf("%d%d%d",&a1,&b1,&c1);
+    printf("a=%d b=%d c=%d",a,b,c);
+
+    int a2,b2,c2;
+    scanf("%d%d%d",&a2,&b2,&c2);
+    printf("%f",(a2+b2+c2)/3.);
+
+ float x;
+ scanf("%f",&x);
+ printf("%e",x);
+
+
+ int x,y;
+ scanf("%d%d",&x,&y);
+ if(x>y){
+    printf("%d",x);
+ }
+ else{
+    printf("%d",y);
+ }
+
+  int x,y,z;
+ scanf("%d%d%d",&x,&y,&z);
+ if(x>y&&x>z){
+    printf("%d",x);
+ }
+ else if(y>z){
+    printf("%d",y);
+ }
+ else{
+    printf("%d",z);
+ }
+
+
+int x,y;
+ scanf("%d%d",&x,&y);
+ if(abs(x)>abs(y)){
+    printf("%d",x);
+ }
+ else{
+    printf("%d",y);
+ }
+
+   float x,y,z,h,ob;
+ int w;
+ printf("1 - wysokosc,2-heron");
+ scanf("%d",&w);
+ if(w==1){
+    printf("podaj dl boku i h");
+    scanf("%f%f",&x,&h);
+ printf("wynik=%f",(x*h)/2);
+ }
+ else if(w==2){
+    printf("podaj dl bokow");
+    scanf("%f%f%f",&x,&y,&z);
+    ob=(x+y+z)/2;
+    printf("wynik=%f",sqrt(ob*(ob-x)*(ob-y)*(ob-z)));
+*/
+float a,b,c,d,e,f;
+printf("podaj a,b,c,d,e,f");
+scanf("%f%f%f%f%f%f",&a,&b,&c,&d,&e,&f);
+printf("uklad= \n%fx+%fy=%f\n%fx+%fy=%f",a,b,c,d,e,f);
+
+ }
+
+
+
