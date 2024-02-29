@@ -1,0 +1,108 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main()
+{
+    /*
+   int a,b,c,d;
+   scanf("%d%d%d",&a,&b,&c)
+   //na delte wzor dokoncz
+
+   int w;
+   printf("podaj1kw,2pro,3troj");
+   scanf("%d",&w);
+   int a,b,h;
+
+   switch(w)
+   {
+   case 1:
+    printf("podaj bok kw");
+    scanf("%d\n",&a);
+    printf("pole kwadratu=%d",a*a);
+    break;
+   case 2:
+    printf("podaj bok pro");
+    scanf("%d%d\n",&a,&b);
+    printf("pole prosto=%d",a*b);
+    break;
+    case 3:
+    printf("podaj bok troj i wysokosc\n");
+    scanf("%d%d",&a,&h);
+    printf("pole troj=%f",(a*h)/2.0);
+    break;
+   }
+
+      int n,m;
+      scanf("%d%d",&n,&m);
+      int i;
+      for(i=n;i<m;i=i+n){
+        printf("%d\n",i);
+      }
+
+      int n,m,k;
+printf("Podaj a i b ik");
+scanf("%d%d%d",&n,&m,&k);
+for(int i=(n/m+1)*n;i<k;i=i+n){
+        printf("%d\n",i);
+}
+
+   int n,s=1,i;
+scanf("%d",&n);
+    for(i=1;i<=n;i++){
+        s=s*i;
+    }
+    printf("%d!=%d",n,s);
+
+    int n,s=0,i;
+scanf("%d",&n);
+    for(i=1;i<=n;i++){
+        s=s+i*i;
+        printf("%d=%d%d",n,s,i);
+    }
+
+      int n;
+scanf("%d",&n);
+int s=1;
+int i;
+    for(i=2;i<=n;i=i+2){
+        s=s+i;
+        printf("%d",s);
+}
+
+    int x=1,y=1,i,t,n;
+    printf("podaj n-ty czesc ciagu fibboacciego=\n");
+    scanf("%d",&n);
+    for (i=1;i<=n-1;i++){
+        t=x+y;
+        x=y;
+        y=t;
+    }
+    printf("%d wyraz ciagu fibonnaciego=%d",n,x);
+
+int n,m,nwd;
+scanf("%d%d",&n,&m);
+int min;
+if(n>m){
+    min=m;
+}else min=n;
+int i,d=1;
+for (i=2;i<=min;i++){
+    if(n%i==0&&m%i==0){
+        d=i;
+    }
+}
+printf("nwd(%d,%d)=%d",n,m,d);
+*/
+int n,m,d;
+scanf("%d%d",&n,&m);
+while(n>0&&m>0){
+    if(n>m){
+        n=n%m;
+    }else m=m%n;
+    if(n==0){
+        d=m;
+    }else d=n;
+    printf("nwd(%d,%d)=%d",n,m,d);
+}
+}
+
