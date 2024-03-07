@@ -1,0 +1,182 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    /*
+    int n;
+    scanf("%d",&n);
+    int i;
+    for(i=1;i*i<=n;i++){
+    }
+    printf("%d",i-1);
+
+    int n;
+    scanf("%d",&n);
+    int i,k,nwd,s=0;
+    for(i=2;i*i<=n;i++){
+    for(k=1;k<=i;k++){
+        if(n%k==0&&i%k==0){
+            nwd=k;
+        }
+    if(nwd==1){
+        s=s+i;
+    }
+    }
+    }
+    printf("%d",s);
+
+
+    int s=1;
+    int n;
+    scanf("%d",&n);
+    int i,t=1;
+    for(i=1;i<=n;i++){
+        s=s*i;
+        t=t+s;
+    }
+    printf("%d",t);
+
+    int n;
+    scanf("%d",&n);
+    int a,b,c;
+    for(a=1;a<n;a++){
+        for(b=a;b<n;b++){
+           for(c=1;c<n;c++){
+            if(a*a+b*b==c*c){
+                printf("(%d,%d,%d)\n",a,b,c);
+            }
+           }
+        }
+    }
+
+    int modul(int x){
+    if(x<0){
+        return -x;
+    }
+    return x;
+    }
+    int n;
+    scanf("%d",&n);
+    printf("%d",modul(n));
+
+    int sil(int x){
+    int s=1;
+    int i;
+    for(i=1;i<=x;i++){
+        s=s*i;
+    }
+    return s;
+    }
+    */
+    /*
+    int ndw(int n){
+    int k,max;
+    for(k=1;k<=n/2;k++){
+        if(n%k==0){
+            max=k;
+        }
+    }
+    return max;
+    }
+
+    int dwa_do_ntej(int x){
+    int s=1;
+    int i;
+    for(i=1;i<=x;i++){
+        s=s*2;
+    }
+    return s;
+    }
+    for(k=1;k<n;k++){
+
+    }
+    printf("%d",ndw(n));
+
+    int i;
+    int n;
+    int s=0;
+    int max;
+    scanf("d",&n);
+    for(i=1;i<n;i++){
+        if(ndw(i)==1){
+            max=i;
+        }
+    }
+    printf("d",max);
+
+     float dwa_do_ntej_calkowity(int x){
+     float s=1;
+     int i;
+     if(x>=0){
+        for(i=1;i<=x;i++){
+            s=s*2;
+        }
+        return s;
+
+     }
+     else{
+        for(i=1;i<=-x;i++){
+            s=s/2;
+        }
+        return s;
+     }
+     }
+
+    int en_do_emtej(int n,int m){
+    int s=1;
+    int i;
+    for(i=1;i<=m;i++){
+        s=s*n;
+    }
+    return s;
+    }
+
+    void flor(int n){
+    int i;
+    for(i=1;i*i<=n;i++){
+    }
+    printf("%d",i-1);
+    }
+    */
+     int n;
+    scanf("%d",&n);
+    int i,k,nwd,s=0;
+    for(i=2;i*i<=n;i++){
+    for(k=1;k<=i;k++){
+        if(n%k==0&&i%k==0){
+            nwd=k;
+        }
+    if(nwd==1){
+        s=s+i;
+    }
+    }
+    }
+    printf("%d",s);
+
+
+    int najwd(int n,int i;){
+    int i,k,nwd,s=0;
+    for(k=1;k<=i;k++){
+        if(n%k==0&&i%k==0){
+            nwd=k;
+        }
+    }
+    return nwd;
+    }
+    int sumuj(int n){
+    int i;
+    for(i=2;i*i<n;i++){
+        if(nwd(n.i)==1){
+            s=s+i;
+        }
+    }
+    return s;
+    }
+
+     int n,m;
+    scanf("%d",&n);
+    printf("%d",sumuj(n));
+    #flor(n);
+
+}
