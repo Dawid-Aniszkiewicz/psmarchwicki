@@ -1,0 +1,127 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void wyczysc(char *napis){
+napis[0]=0;
+}
+int dlugosc(char *napis){
+int i=0;
+while(napis[i]!=0)
+    i++;
+return i;
+}
+int porownanie(char *napis1,char *napis2){
+int i;
+int dl1=dlugosc(napis1);
+int dl2=dlugosc(napis2);
+if(dl1==dl2){
+    for(i=0;i<=dl2-1;i++){
+        if(napis1[i]!=napis2[i]){
+            return 0;
+        } return 1;
+    }
+}else return 0;
+}
+int porownaniewsl(char *napis1,char *napis2){
+int i,j;
+while(napis1[i]!=0 && napis2[i]!=0){
+    if(napis1[i]<napis2[i])
+        return 1;
+    else if(napis1[i]>napis2[i]){
+        return 0;
+    if(napis2[i]==0)
+       return 0;
+    }
+    i++;
+}
+
+}
+void przepisz(char*napis1,char*napis2){
+int i;
+for(i=0;i<dlugosc(napis1);i++){
+napis2[i]=napis1[i];
+}
+napis2[dlugosc(napis1)]=0;
+}
+
+void wypisz(char *napis){
+printf("%s\n",napis);
+       }
+
+void kopiujn(char*napis1,char*napis2,int n){
+int i;
+for(i=0;i<dlugosc(napis1)&&i<n;i++){
+napis2[i]=napis1[i];
+}
+napis2[i]=0;
+}
+void sklej(char *napis1,char *napis2,char *napis3){
+int i,j;
+for(i=0;napis1[i]!=0;i++){
+    napis3[i]=napis1[i];
+}
+for(j=0;napis2[j]!=0;i++,j++){
+    napis3[i]=napis2[j];
+}
+}
+void podmien(char* napis){
+    int i;
+    for(i=0;i<napis[i]!=0;i++){
+        if((napis[i]>='a')&&(napis[i]<='z')){
+            napis[i]=napis[i]+'A'-'a';
+        }
+        }
+    }
+void wytnij(char *napis, int n,int m){
+int i,j;
+for(j=0;napis[j]!=0;j++){
+    
+}
+if(j+1>m){
+    for(i=0;i+m<j;i++){
+        napis[n+i]=napis[m+i+1];
+    }
+}else if((n<j)&&(j+1<=m)){
+}
+
+}
+int main()
+{
+    /*
+    ///cw 5-2-1
+    char *napis="pieczewo";
+    printf(napis);
+    printf("\n");
+    dlugosc(napis);
+    printf("co wyswietli po wyczyszceniu\n");
+   printf("%d\n",porownanie("wziasc","wziazc"));
+   printf("%d\n",porownaniewsl("sam","sama"));
+   printf("%d\n",porownaniewsl("matematyka","matematyka"));
+   printf("%d\n",porownanie("wziasc","wziazc"));
+
+
+   char* pier="arbuz";
+   char dwa[20]="arbiter";
+   int n=1;
+   wypisz(pier);
+   wypisz(dwa);
+   przepisz(pier,dwa);
+   wypisz(pier);
+   wypisz(dwa);
+   char* n1="informatyka";
+   char n2[20]="matematyka";
+   char n3="";
+
+   sklej(n1,n2,n3);
+   wypisz(n3);
+   kopiujn(n1,n2,6);
+   wypisz(n1);
+   wypisz(n2);
+//32
+
+ */
+ char n1[50] ="CzterY";
+ podmien(n1);
+ printf(n1);
+}
+
