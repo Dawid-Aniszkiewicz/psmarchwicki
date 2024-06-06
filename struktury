@@ -1,0 +1,195 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct element{
+int i;
+struct element *next;
+};
+
+struct element *utworz(){
+return NULL;
+};
+
+void wyczysc(struct element* lista){
+struct element *wsk=lista;
+while(lista!=NULL){
+    lista=lista->next;
+    free(wsk);
+    wsk=lista;
+}
+}
+struct element * dodajnapoczatek(struct element* lista,int a){
+struct element *wsk=malloc(sizeof(struct element));
+wsk->i=a;
+wsk->next=lista;
+return wsk;
+}
+struct element * dodajnakoniec(struct element* lista,int a){
+struct element *wsk=malloc(sizeof(struct element));
+if(lista==NULL){
+    lista=wsk=malloc(sizeof(struct element));
+}
+else{
+    wsk=lista;
+while(wsk->next!=NULL){
+    wsk=wsk->next;
+
+}
+wsk->next=malloc(sizeof(struct element));
+wsk=wsk->next;
+}
+wsk->i=a;
+wsk->next=NULL;
+return lista;
+}
+///wypisz liste
+
+void wypisz(struct element *lista){
+while(lista!=NULL){
+    printf("%d\n",lista->i);
+    lista=lista->next;
+
+}
+printf("\n");
+}
+struct element*dodajodpowiednio(struct element*lista,struct element*elem,int a){
+struct element *wsk=malloc(sizeof(struct element));
+wsk->i=a;
+if(elem==NULL){
+    wsk->next-lista;
+    lista=wsk;
+}
+else{
+    wsk->next=elem->next;
+    elem->next=wsk;
+}
+return lista;
+};
+struct element *usun(struct element*lista,int a){
+struct element *wsk,*wsk2;
+if(lista=NULL){
+    return NULL;
+}
+wsk=lista;
+if(lista->i=a){
+    lista=lista->next;
+    free(wsk);
+    return lista;
+}
+else{
+    while((wsk->next!=NULL)&&(wsk->next->i!=a)){
+        wsk=wsk->next;
+    }
+    if(wsk->next!=NULL){
+        wsk2=wsk->next;
+        wsk->next=wsk2->next;
+        free(wsk2);
+    }
+    return lista;
+}};
+///lista z glowa !!!
+struct element *utworzglowe(){
+struct element *wsk=malloc(sizeof(struct element));
+wsk->next=NULL;
+return wsk;
+};
+
+void wyczysczglowa(struct element *lista){
+struct element *wsk=lista->next;
+lista=wsk;
+while(lista!=NULL){
+    lista=lista->next;
+    free(wsk);
+    wsk=lista;
+}
+}
+struct element * dodajnapoczatekzglowa(struct element* lista,int a){
+struct element *wsk=malloc(sizeof(struct element));
+wsk->i=a;
+wsk->next=lista->next;
+lista->next=wsk;
+}
+int suma(struct element *lista){
+int sum=0;
+while(lista!=NULL){
+    sum=sum+lista->i;
+    lista=lista->next;
+}
+return sum;
+}
+struct element *concat(struct element* lista1,struct element* lista2){
+struct element *wsk=lista1;
+while(wsk->next!=NULL){
+    wsk=wsk->next;
+}
+wsk->next=lista2;
+return lista1;
+};
+struct element *przeconcat(struct element * lista1,struct element * lista2){
+struct element*wsk1,*wsk2;
+if(lista1==NULL){
+    return NULL;
+}
+wsk1=wsk2=lista1;
+lista1=lista1->next;
+wsk2->next=lista2;
+wsk2=lista2;
+lista2=lista2->next;
+while(lista1!=NULL){
+    wsk2->next=lista1;
+    wsk2=lista1;
+    lista1=lista1->next;
+    wsk2->next=lista2;
+    wsk2=lista2;
+    lista2=lista2->next;
+}
+return wsk1;
+};
+///struktury zlozone
+struct trojkat{
+double a,b,c;
+};
+double obwodtroj(struct trojkat t){
+return t.a+t.b+t.c;
+}
+
+struct zespolone{
+double re,im;
+};
+struct zespolone dodaj(struct zespolone z1,struct zespolone z2){
+struct zespolone z3;
+z3.re=z1.re+z2.re
+z3.im=z1.im+z2.im
+};
+void wypisz_zespolone(struct zespolone z){
+printf("%f+%f*i",z.re,z.im);
+}
+int main()
+{
+//struct element *lista1=utworz();
+//struct element *lista2=utworz();
+//struct element *lista3=utworz();
+//
+//lista1=dodajnakoniec(lista1,4);
+//lista1=dodajnakoniec(lista1,3);
+//lista1=dodajnakoniec(lista1,2);
+//
+//lista2=dodajnapoczatek(lista2,1);
+//lista2=dodajnapoczatek(lista2,2);
+//lista2=dodajnapoczatek(lista2,3);
+//wypisz(lista1);
+//wypisz(lista2);
+//printf("%d",suma(lista1));
+//printf("\n");
+//printf("\n");
+//lista3=concat(lista1,lista2);
+//wypisz(lista3);
+//printf("\n");
+//lista3=przeconcat(lista1,lista2);
+//wypisz(lista3);
+struct trojkat t;
+t.a=5;
+t.b=7;
+t.c=10;
+printf("%f",obwodtroj(t));
+}
