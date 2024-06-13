@@ -1,0 +1,22 @@
+///Napisy///
+void przepisz(char*napis,char*napis2){
+int i;
+if(dlugosc(napis)<=1){
+        printf("wynik jest napisem pustym \n");
+        printf("dlugosc napis1=%d \n",dlugosc(napis));
+    }
+    else{
+        for(i=0;i<dlugosc(napis)-1;i++){
+            napis2[i]=napis[i];
+}
+}
+}
+
+void odwroc(char*napis,char*napis2){
+    int i;
+    int length=dlugosc(napis);
+        for (i = 0; i <length; i++) {
+        napis2[i] = napis[length - 1 - i];
+}}
+////tablice tablic (na przykład dla typów int** czy int **) i tablice wielowymiarowe (na przykład
+dla typów int[][n] lub int[][n][m]).
