@@ -1,0 +1,543 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct elem{
+int t;
+struct elem *next;
+};
+int check_position(struct elem *lista,struct elem*lista2){
+int count=0;
+struct elem*l1=lista->next;
+struct elem*l2=lista2->next;
+while(l1!=NULL||l2!=NULL){
+    if(l1->t==l2->t){
+        count++;
+    }
+    l1=l1->next;
+    l2=l2->next;
+}
+
+return count;
+}
+int main()
+{
+
+struct elem *lista=malloc(sizeof(struct elem));
+lista->next=malloc(sizeof(struct elem));
+lista->next->t=3;
+lista->next->next=malloc(sizeof(struct elem));
+lista->next->next->t=4;
+lista->next->next->next=malloc(sizeof(struct elem));
+lista->next->next->next->t=5;
+lista->next->next->next->next=NULL;
+
+struct elem *lista2=malloc(sizeof(struct elem));
+lista2->next=malloc(sizeof(struct elem));
+lista2->next->t=3;
+lista2->next->next=malloc(sizeof(struct elem));
+lista2->next->next->t=2;
+lista2->next->next->next=malloc(sizeof(struct elem));
+lista2->next->next->next->t=5;
+lista2->next->next->next->next=NULL;
+
+struct elem *wsk=lista->next;
+while(wsk != NULL)
+    {
+        printf("%d\n", wsk->t);
+        wsk = wsk->next;
+    }
+    printf("\n");
+struct elem *wsk2=lista2->next;
+while(wsk2 != NULL)
+{
+    printf("%d\n", wsk2->t);
+    wsk2 = wsk2->next;
+}
+printf("wynik=%d\n",check_position(lista,lista2));
+printf("\n");
+
+}
+____________________________________________________________________
+#include <stdio.h>
+#include <stdlib.h>
+
+/*
+int**alokuj123(unsigned int n,unsigned int m){
+int**t=malloc(n*sizeof(int*));
+for(int i=0;i<n;i++){
+    t[i]=malloc(m*sizeof(int));
+}
+return t;
+}
+int wczytaj123(int**t,unsigned int n,unsigned int m){
+for(int i=0;i<n;i++){
+    for(int j=0;j<m;j++){
+        scanf("%d",&t[i][j]);
+    }
+}
+}
+int wypisz123(int **t,unsigned int n,unsigned int m){
+for(int i=0;i<n;i++){
+    for(int j=0;j<m;j++){
+        printf("%d\t",t[i][j]);
+    }
+    printf("\n");
+}
+}
+void swapRows123(int **array, int n, int m) {
+    if (n < 4) {
+        return;
+    }
+    int *temp = array[1];
+    array[1] = array[n-2];
+    array[n-2] = temp;
+}
+
+
+
+int**alokuj(unsigned int n, unsigned int m){
+int **t=malloc(n*sizeof(int*));
+for(int i=0;i<n;i++){
+    t[i]=malloc(m*sizeof(int));
+}
+return t;
+}
+int wczytaj(int **t,unsigned int n,unsigned int m){
+for(int i=0;i<n;i++){
+    for(int j=0;j<m;j++){
+        scanf("%d\n",&t[i][j]);
+    }
+}
+}
+int wypisz(int **t,unsigned int n,unsigned int m){
+for(int i=0;i<n;i++){
+    for(int j=0;j<m;j++){
+        printf("%d\t",t[i][j]);
+    }
+    printf("\n");
+}
+}
+void reverseInRows(int **t,int n,int k1,int k2){
+for(int i=0;i<n;i++){
+        int temp=t[i][k1];
+        t[i][k1]=t[i][k2];
+        t[i][k2]=temp;
+}
+}
+
+int **alokuj(int n){
+int**t=malloc(n*sizeof(int*));
+for(int i=0;i<n;i++){
+    t[i]=malloc(n*sizeof(int));
+}
+return t;
+}
+int wczytaj(int**t,int n){
+for(int i=0;i<n;i++){
+    for(int j=0;j<n;j++){
+        scanf("%d\n",&t[i][j]);
+    }
+}
+}
+int wypisz(int **t,int n){
+for(int i=0;i<n;i++){
+    for(int j=0;j<n;j++){
+        printf("%d\t",t[i][j]);
+    }
+    printf("\n");
+}
+}
+void swapDiag(int **t, int n) {
+
+    for (int i = 0; i < n/2; i++) {
+        int temp = t[i][i];
+        t[i][i] = t[n - 1 - i][n - 1 - i];
+        t[n - 1 - i][n - 1 - i] = temp;
+    }
+}
+*/
+
+int **alokuj(int n,int m){
+int **t=malloc(n*sizeof(int*));
+for(int i=0;i<n;i++){
+    t[i]=malloc(m*sizeof(int));
+}
+return t;
+}
+int wczytaj(int **t,int n,int m){
+for(int i=0;i<n;i++){
+    for(int j=0;j<m;j++){
+        scanf("%d",&t[i][j]);
+    }
+}
+}
+int wypisz(int **t,int n,int m){
+    for(int i=0;i<n;i++){
+    for(int j=0;j<m;j++){
+          printf("%d\t",t[i][j]);
+    }
+    printf("\n");
+    }
+}
+int oddMin(int**t,int n,int m){
+    int minim=t[0][1];
+for(int i=0;i<n;i++){
+    for(int j=0;j<m;j++){
+        if(j%2!=0){
+            if(t[i][j]<minim){
+                minim=t[i][j];
+            }
+        }
+    }
+}
+return minim;
+}
+
+int main()
+{
+int **t=alokuj(2,5);
+wczytaj(t,2,5);
+wypisz(t,2,5);
+printf("%d",oddMin(t,2,5));
+
+
+//int **t=alokuj(3);
+//wczytaj(t,3);
+//wypisz(t,3);
+//swapRows123(t,4,3);
+//swapDiag(t,3);
+//reverseInRows(t,3,0,2);
+//wypisz(t,3);
+}
+---------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+/*
+int dlugosc(char*napis){
+int wynik=0;
+
+while (*napis!='\0'){
+        wynik++;
+        napis++;
+}
+return wynik;
+}
+int countVowels(char *napis1,char* napis2, char* napis3){
+//a,e,i,o,u,y,A,E,I,O,U,Y
+int wynik=0;
+for(int i=0;i<dlugosc(napis1);i++){
+    if(napis1[i]=='a'||napis1[i]=='e'||napis1[i]=='i'||napis1[i]=='o'||napis1[i]=='u'||napis1[i]=='y'||napis1[i]=='A'||napis1[i]=='E'||napis1[i]=='I'||napis1[i]=='O'||napis1[i]=='U'||napis1[i]=='Y'){
+        wynik++;
+    }
+}
+for(int i=0;i<dlugosc(napis2);i++){
+    if(napis2[i]=='a'||napis2[i]=='e'||napis2[i]=='i'||napis2[i]=='o'||napis2[i]=='u'||napis2[i]=='y'||napis2[i]=='A'||napis2[i]=='E'||napis2[i]=='I'||napis2[i]=='O'||napis2[i]=='U'||napis2[i]=='Y'){
+        wynik++;
+    }
+}
+for(int i=0;i<dlugosc(napis3);i++){
+    if(napis3[i]=='a'||napis3[i]=='e'||napis3[i]=='i'||napis3[i]=='o'||napis3[i]=='u'||napis3[i]=='y'||napis3[i]=='A'||napis3[i]=='E'||napis3[i]=='I'||napis3[i]=='O'||napis3[i]=='U'||napis3[i]=='Y'){
+        wynik++;
+    }
+}
+return wynik;
+}
+
+int compare(int tab1[],int tab2[],int size){
+int wynik1=0;
+int wynik2=0;
+for(int i=0;i<size;i++){
+    if(tab1[i]%2!=0){
+        wynik1++;
+    }
+}
+printf("wynik 1\n");
+for(int i=0;i<size;i++){
+    if(tab2[i]%2!=0){
+        wynik2++;
+    }
+}
+if(wynik1==wynik2){
+    return 1;
+}
+return 0;
+}
+
+int counter(int n,int m,int tab[m]){
+    int wynik=0;
+for(int i=0;i<m;i++){
+        if(tab[i]<n||tab[i]==6*n){
+            wynik++;
+        }
+}
+return wynik;
+}
+
+
+
+int calculate(float(*fun)(float),float x){
+int n=(int)x;
+for(int i=1;i<x;i++){
+    if(fun(i)!=fun(-i)){
+        return 0;
+    }
+}
+return 1;
+}
+float fun(float a){
+return a*a;
+}
+
+int dlugosc(char*napis){
+int wynik=0;
+while (*napis!='\0'){
+     wynik++;
+     napis++;
+}
+return wynik;
+}
+
+
+int findSubString(char*str , char*sub){
+for(int i=0;i<dlugosc(str);i++){
+    if(str[i]==sub[0]){
+        if(str[i+1]==sub[1]){
+            return i;
+        }
+    }
+}
+return -1;
+}
+
+int dlugosc(char*napis){
+int wynik=0;
+while(*napis!='\0'){
+    wynik++;
+    napis++;
+}
+return wynik;
+}
+
+int countHexDigit(char*napis){
+int licznik=0;
+for(int i=0;i<dlugosc(napis);i++){
+if((napis[i]>='0'&&napis[i]<='9')||(napis[i]>='A'&&napis[i]<='F')||(napis[i]>='a'&&napis[i]<='f')){
+    licznik++;
+}
+}
+return licznik;
+}
+
+*/
+void concat(int n,int tab1[n],int tab2[n],int tab3[2*n]){
+    int a=0;
+for(int i=0;i<2*n;i++){
+if(i<n){
+    tab3[i]=tab2[i];
+}
+if(i>=n){
+    tab3[i]=tab1[a]-tab2[a];
+    a++;
+}
+
+}
+for(int i=0;i<2*n;i++){
+    printf("%d,",tab3[i]);
+}
+}
+
+
+
+
+
+int main(void)
+{
+    int n=3;
+    int tab1[]={1,2,3};
+    int tab2[]={4,5,6};
+    int tab3[2*n];
+    concat(n,tab1,tab2,tab3);
+
+/*
+    char napis[40]="ABCD";
+    char napis2[40]="BC";
+    printf("dl=%d\n",dlugosc(napis));
+    printf("dl=%d\n",dlugosc(napis2));
+    printf("wynik= %d\n",findSubString(napis,napis2));
+    char napis[40]="konfi";
+    char napis2[40]="fi";
+    printf("dl=%d\n",dlugosc(napis));
+    printf("dl=%d\n",dlugosc(napis2));
+    printf("wynik= %d",findSubString(napis,napis2));
+    float t=5.14;
+    printf("wynik=%d",calculate(fun,t));
+
+   char napis1[40]="kamil";
+   char napis2[20]="z";
+   char napis3[30]="plocka";
+   printf("dl=%d\n",dlugosc(napis1));
+   printf("dl=%d\n",dlugosc(napis2));
+   printf("dl=%d\n",dlugosc(napis3));
+
+   printf("wynik=%d\n",countVowels(napis1,napis2,napis3));
+
+   int tab1[]={3,4,5};
+   int tab2[]={7,8,9};
+   int size=sizeof(tab1)/sizeof(int);
+
+   printf("%d\n",compare(tab1,tab2,size));
+
+    int m=4;
+    int n=3;
+    int tab[]={20,-3,44,55};
+    printf("%d\n",counter(n,m,tab));
+    int m1=5;
+    int n1=12;
+    int tab1[]={11,-3,7,45,12};
+    printf("%d\n",counter(n1,m1,tab1));
+
+float f=3.5;
+int i=(int)f;
+printf("%d",f);
+*/
+}
+--------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+/*
+typedef struct{
+char name[50];
+char country[50];
+float record;
+
+}Athlete;
+
+char*getname(Athlete tab[],int size){
+int maxIndex=0;
+for(int i=1;i<size;i++){
+    if(tab[i].record>tab[maxIndex].record){
+        maxIndex=i;
+    }
+}
+return tab[maxIndex].name;
+}
+
+typedef struct{
+char address[50];
+int no;
+
+}Building;
+
+
+Building najmniejszybudynek(Building tab[], int size) {
+    Building minnumer = tab[0];
+    for (int i = 1; i < size; i++) {
+        if (tab[i].no < minnumer.no) {
+            minnumer = tab[i];
+        }
+    }
+    return minnumer;
+}
+typedef struct{
+char name[20];
+int age;
+float height;
+}Person;
+
+char*getname123(Person osoba[],int size){
+int maks=osoba[0].age;
+int indexnajs=0;
+for(int i=1;i<size;i++){
+    if(osoba[i].age>=maks){
+        maks=osoba[i].age;
+        indexnajs=i;
+    }
+}
+return osoba[indexnajs].name;
+}
+
+
+typedef struct{
+char*imie[40];
+int numer;
+float wynagrodzenie;
+}Pracownik;
+
+Pracownik stworzpracownika(Pracownik *p){
+scanf("%s",&p->imie);
+scanf("%d",&p->numer);
+scanf("%f",&p->wynagrodzenie);
+}
+*/
+typedef struct{
+char*city;
+float temperature;
+}Temperature;
+
+float max_temperature(Temperature miasta[],int size){
+float max_temp=miasta[0].temperature;
+for(int i=1;i<size;i++){
+    if(miasta[i].temperature>max_temp)
+        max_temp=miasta[i].temperature;
+
+}
+return max_temp;
+}
+
+
+int main()
+{
+   Temperature miasta[3]={
+   {
+       "Zadupie",12
+   },
+   {
+       "Most",23
+   },
+   {
+       "Jezioro",4
+   }
+   };
+   int size=sizeof(miasta)/sizeof(miasta[0]);
+   printf("max temparatura=%f",max_temperature(miasta,size));
+
+
+
+    /*
+    Pracownik nowy_pracownik;
+    stworzpracownika(&nowy_pracownik);
+    printf("%s\n",nowy_pracownik.imie);
+    printf("%d\n",nowy_pracownik.numer);
+    printf("%f\n",nowy_pracownik.wynagrodzenie);
+
+    Person osoba[]={
+    {"John",34,45.8},
+    {"Anna",23,22.3},
+    {"Tom",45,22.4},
+    {"Kamil",45,12.0}
+    };
+
+    int size = sizeof(osoba)/sizeof(osoba[0]);
+    char*najsztarszy=getname123(osoba,size);
+    printf("staruch =%s",najsztarszy);
+
+    Athlete athletes[]={
+    {"John","USA",45.8},
+    {"Anna","France",22.3},
+    {"Tom","Canada",22.4}
+        };
+    Building budynki[]={
+    ("AA",43),
+    ("KLM",22),
+    ("PQ",67)
+    };
+
+    //int size=sizeof(athletes)/sizeof(athletes[0]);
+    //int size=sizeof(budynki)/sizeof(budynki[0]);
+    //Building minbuilding = najmniejszybudynek(budynki,size);
+    ////printf("adres=%s,numer=%d\n",minbuilding.address,minbuilding.no);
+    //printf("\n");
+    //char*bestAthlete = getname(athletes,size);
+    //printf("najlepszy sportowiec,%s\n",bestAthlete);
+    */
+}
